@@ -13,7 +13,9 @@ use App\Http\Middleware\LogAcessoMiddleware;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Principal::class, 'principal']);
+Route::get('/', [App\Http\Controllers\Principal::class, 'home'])->name('pagina-inicial');
+Route::get('/sobre', [App\Http\Controllers\Sobre::class, 'about'])->name('pagina-sobre');
+
 Route::get('/contato', [App\Http\Controllers\Contato::class, 'contato']);
 Route::get('/aluno/boletim', [App\Http\Controllers\Aluno::class, 'boletim']);
 Route::get('/professor/calendario', [App\Http\Controllers\Professor::class, 'calendario']);
