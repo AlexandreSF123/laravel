@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Principal extends Controller
+class Farmacia extends Controller
 {
     function index(){
-        return view('pagina-principal');
+        return view('pagina-farmacia');
     }
 
     
 }
-
-
