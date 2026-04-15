@@ -6,23 +6,20 @@ use Illuminate\Http\Request;
 
 class Aluno extends Controller
 {
-    function aluno(){
-        echo 'Página do Aluno';
-    }
-    function login(){
-        echo "Login Efetuado";
-    }
-    function boletim(){
-        echo "Português: MB|R|B|I";
-    }
-    function declaração(){
-        echo "Que tipo de declaração?";
-    }
-    function(){
-        
+    function index(){
+        return view('index');
     }
 
+    function adicionar(Request $dados) {
+        $alunos = new \App\Models\AlunoModel();
+        $alunos::create($dados->all());
+        return view('index', ['sucesso'=>'Aluno cadastrado!']);
+    }
+
+    function remover(Request $dados) {}
+
+    function atualizar(Request $dados) {}
     
+    function consultar() {}
+
 }
-
-
