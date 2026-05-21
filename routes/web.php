@@ -12,19 +12,21 @@ use App\Http\Middleware\LogAcessoMiddleware;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::prefix('/aluno')->group(function(){
+    Route::get('/index', [App\Http\Controllers\AlunoController::class, 'index'])->name('aluno.index');
+    Route::post('/add', [App\Http\Controllers\AlunoController::class, 'add'])->name('aluno.add');
+}); 
 
-Route::get('/', [App\Http\Controllers\Principal::class, 'principal']);
-Route::get('/contato', [App\Http\Controllers\Contato::class, 'contato']);
-Route::get('/aluno/boletim', [App\Http\Controllers\Aluno::class, 'boletim']);
-Route::get('/professor/calendario', [App\Http\Controllers\Professor::class, 'calendario']);
-Route::get('/professor/login', [App\Http\Controllers\Professor::class, 'login']);
-Route::get('/professor/cronograma', [App\Http\Controllers\Professor::class, 'cronograma']);
-Route::get('/aluno/declaração', [App\Http\Controllers\Aluno::class, 'declaração']);
-Route::get('/aluno/matricula', [App\Http\Controllers\Aluno::class, 'matricula']);
-Route::get('/aluno/login', [App\Http\Controllers\Aluno::class, 'login']);
-Route::get('/aluno/solicitar', [App\Http\Controllers\Aluno::class, 'solicitação']);
-Route::get('/aluno/ficha_de_desempenho', [App\Http\Controllers\Aluno::class, 'fichaDesempenho']);
-Route::get('/aluno/email_institucional', [App\Http\Controllers\Aluno::class, 'emailInstituicional']);
+Route::prefix('/curso')->group(function(){
+    Route::get('/index', [App\Http\Controllers\CursoController::class, 'index'])->name('curso.index');
+    Route::post('/add', [App\Http\Controllers\CursoController::class, 'add'])->name('curso.add');
+}); 
+
+Route::prefix('/professor')->group(function(){
+    Route::get('/index', [App\Http\Controllers\ProfessorController::class, 'index'])->name('professor.index');
+    Route::post('/add', [App\Http\Controllers\ProfessorController::class, 'add'])->name('professor.add');
+}); 
+
 
 
 
