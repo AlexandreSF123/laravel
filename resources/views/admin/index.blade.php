@@ -1,7 +1,6 @@
 
-
-    <div>
-    <form action="{{ route('aluno.add') }}" method="post">
+<div>
+    <form action="{{ route('admin.add') }}" method="post">
         @csrf
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">
@@ -10,22 +9,22 @@
     </form>
     <table border="1">
         <tr>
-            <td>Nome do Aluno</td>
+            <td>Nome do Administrador</td>
             <td colspan="2">Ações</td>
         </tr>
-        @isset($alunos)
-                @foreach($alunos as $aluno)
+        @isset($admins)
+                @foreach($admins as $admin)
                     <tr>
                         <td>
-                            <h3>{{ $aluno->nome }}</h3>
+                            <h3>{{ $admin->nome }}</h3>
                         </td>
                         <td>
-                        <form action="{{ route('aluno.remove', ['id' => $aluno->id]) }}" method="GET">
+                        <form action="{{ route('admin.remove', ['id' => $admin->id]) }}" method="GET">
                                 <button type="submit">Remover</button>
                             </form>
                         </td>
                         <td>
-                        <form action="{{ route('aluno.atualizar', ['id' => $aluno->id]) }}" method="GET">
+                        <form action="{{ route('admin.atualizar', ['id' => $admin->id]) }}" method="GET">
                                 <button type="submit">Atualizar</button>
                             </form>
                         </td>
