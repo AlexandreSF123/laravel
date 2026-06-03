@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('componente', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamps(); 
+            $table->string('nome');
+            $table->string('hora_inicio');
+            $table->string('hora_fim');
+            /* $table->string('nome', 100); quantidade de 100 caracteres */
+
         });
     }
 

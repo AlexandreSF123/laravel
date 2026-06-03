@@ -3,10 +3,23 @@
         @csrf
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">
-        <label for="nome">Hora de Inicio</label>
-        <input type="text" name="nome" id="nome">
-        <label for="nome">Horario de Finalização</label>
-        <input type="text" name="nome" id="nome">
+        <hr>
+        <label for="hora_inicio">Hora de Inicio</label>
+        <input type="datetime" name="hora_inicio" id="hora_inicio">
+        <hr>
+        <label for="hora_fim">Horario de Finalização</label>
+        <input type="datetime" name="hora_fim" id="hora_fim">
+        @isset($success)
+            <h1>{{ $success }}</h1>
+        @endisset
+        @if($errors->any())
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+        
 
         <button type="submit">Salvar</button>
     </form>
@@ -20,6 +33,12 @@
                     <tr>
                         <td>
                             <h3>{{ $componente->nome }}</h3>
+                        </td>
+                        <td>
+                            <h3>{{ $componente->hora_inicio }}</h3>
+                        </td>
+                        <td>
+                            <h3>{{ $componente->hora_fim }}</h3>
                         </td>
                         <td>
                         <form action="{{ route('componente.remove', ['id' => $componente->id]) }}" method="GET">
