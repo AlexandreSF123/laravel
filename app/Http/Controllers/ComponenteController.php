@@ -18,11 +18,19 @@ class ComponenteController extends Controller
                 $dados->all(),
                   [
                       'nome' => 'required|min:3|max:255',
+                      'hora_inicio' => 'required|min:3|max:255',
+                      'hora_fim' => 'required|min:3|max:255',
                   ],
                   [
                       'nome.required' => 'O campo nome é obrigatório.',
                       'nome.min' => 'O campo nome deve conter no mínimo 3 caracteres.',
                       'nome.max' => 'O campo nome deve conter no máximo 255 caracteres.',
+                      'nome.required' => 'O campo Hora de Inicio é obrigatório.',
+                      'nome.min' => 'O campo Hora de Inicio deve conter no mínimo 3 caracteres.',
+                      'nome.max' => 'O campo Hora de Inicio deve conter no máximo 255 caracteres.',
+                      'nome.required' => 'O campo Horário de Finalização é obrigatório.',
+                      'nome.min' => 'O campo Horário de Finalização deve conter no mínimo 3 caracteres.',
+                      'nome.max' => 'O campo Horário de Finalização deve conter no máximo 255 caracteres.',
                   ]);
             $componente = new \App\Models\ComponenteModel();
             $componente::create($dados->all());

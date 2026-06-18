@@ -5,10 +5,10 @@
         <input type="text" name="nome" id="nome">
         <hr>
         <label for="hora_inicio">Hora de Inicio</label>
-        <input type="datetime" name="hora_inicio" id="hora_inicio">
+        <input type="datetime" name="hora_inicio" id="hora_inicio" value="{{ old('hora_inicio') }}" >
         <hr>
         <label for="hora_fim">Horario de Finalização</label>
-        <input type="datetime" name="hora_fim" id="hora_fim">
+        <input type="datetime" name="hora_fim" id="hora_fim" value="{{ old('hora_fim') }}">
         @isset($success)
             <h1>{{ $success }}</h1>
         @endisset

@@ -3,11 +3,11 @@
 <form action="{{ route('professor.add') }}" method="post">
         @csrf
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome"value="{{ old('nome') }}">
         <hr>
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email"value="{{ old('nome') }}">
         <hr>
 
         <label for="telefone">Telefone</label>

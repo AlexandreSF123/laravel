@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps(); 
             $table->string('nome');
-            $table->string('hora_inicio');
-            $table->string('hora_fim');
+            $table->timestamps('hora_inicio');
+            $table->timestamps('hora_fim');
             /* $table->string('nome', 100); quantidade de 100 caracteres */
 
         });
